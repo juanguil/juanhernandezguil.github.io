@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juan Hernández Guil | Ingeniero Telecomunicaciones</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+
+
+
+  </head>
+
+  <body>
+    <!-- 🌀 PANTALLA DE CARGA -->
+    <div id="loader">
+      <div class="loader-content">
+        <h1 id="loader-text">0%</h1>
+      </div>
+    </div>
+
+    <!-- 🌍 SELECCIÓN DE IDIOMA (aparece tras la carga) -->
+    <div id="language-select" class="hidden">
+      <h2>Select your language</h2>
+      <div class="lang-buttons">
+        <button id="es-btn">Spanish</button>
+        <button id="en-btn">English</button>
+      </div>
+    </div>
+
+    <!-- 🌟 PRIMERA ESCENA -->
+    <section class="hero hidden">
+      <div class="hero-bg"></div>
+      <div class="contact-info hidden">
+        <div class="contact-icons">
+          <div class="icon" data-info="+34 675 03 70 91">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="icon" data-info="juanhernandezguil1@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="icon" data-info="LinkedIn">
+            <a href="https://www.linkedin.com/in/juan-hern%C3%A1ndez-guil/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    <!-- Agrega esto en el <head> si no lo tienes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+      <div class="hero-text blur-background">
+        <h1>JUAN HERNÁNDEZ</h1>
+        <h2 h2 data-i18n="hero_career_title">Ingeniero de Telecomunicaciones</h2>
+        <p>
+          Nacido en Málaga en 1999, cursó el grado en Ingeniería de Telecomunicaciones con especialización
+           en Telemática, etapa en la que surgió su interés por el software y las redes de telecomunicaciones.
+
+          <p>Enfocado en partir del estado más actual en el desarrollo de un sistema, que ya incorpore la tecnología,
+          las ideas y las características más nuevas, para avanzar en la aplicación a la mejora continua de la
+          vida cotidiana.
+           
+        </p>
+      </div>
+    </section>
+
+    <!-- 🌟 SEGUNDA ESCENA -->
+    <section class="about hidden" id="experience">
+      <div class="blur-container">
+        <div class="about-content">
+          <h2 h2 data-i18n="hero_experience">Experiencia & Aplicaciones</h2>
+          <div class="experience-cards">
+            <a class="experience-card" href="keysight.html">
+              <img src="keysight.jpg" alt="Keysight logo" />
+              <div class="experience-text">
+                <h3>Keysight Technologies</h3>
+                <p p data-i18n="hero_keysight">Experiencial laboral como Desarrollador C# en entorno de redes móviles.</p>
+              </div>
+            </a>
+            <a class="experience-card" href="LLM.html">
+              <img src="mistral.jpg" alt="LLM" />
+              <div class="experience-text">
+                <h3 h3 data-i18n="hero_LLM_title">Estimación de KPIs con LLMs</h3>
+                <p p data-i18n ="hero_LLM_card">Proyecto sobre el diseño y desarrollo de metodología para la estimación de KPIs con LLMs.</p>
+              </div>
+            </a>
+            <a class="experience-card experience-card--website" href="website.html">
+              <img src="portfolio.png" alt="website" />
+              <div class="experience-text">
+                <h3>Website</h3>
+                <p p data-i18n="hero_web_card">Proyecto de un portfolio website para la documentacion del aprendizaje.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌟 TERCERA ESCENA: SKILLS -->
+    <section class="skills hidden">
+      <div class="skills-grid">
+        <!-- 💠 Recuadro izquierdo -->
+        <div class="blur-container skill-box">
+          <div class="skills-content">
+            <h2 h2 data-i18n="hero_languages">Lenguajes</h2>
+            <div class="skills-list">
+
+              <div class="skills-list">
+              <div class="skill"><span>C#</span><div class="skill-bar skill-bar-75"></div></div>
+              <div class="skill"><span>C</span><div class="skill-bar skill-bar-75"></div></div>
+              <div class="skill"><span>C++</span><div class="skill-bar skill-bar-75"></div></div>
+              <div class="skill"><span>JAVA</span><div class="skill-bar skill-bar-65"></div></div>
+              <div class="skill"><span>PYTHON</span><div class="skill-bar skill-bar-65"></div></div>
+              <div class="skill"><span>JAVASCRIPT</span><div class="skill-bar skill-bar-35"></div></div>
+              <div class="skill"><span>BASH</span><div class="skill-bar skill-bar-35"></div></div>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- 💠 Recuadro derecho -->
+        <div class="blur-container skill-box">
+          <div class="skills-content">
+            <h2>Frameworks</h2>
+            <div class="skills-list">
+              <div class="skill"><span>JIRA</span><div class="skill-bar skill-bar-50"></div></div>
+              <div class="skill"><span>SourceTree</span><div class="skill-bar skill-bar-45"></div></div>
+              <div class="skill"><span>Confluence</span><div class="skill-bar skill-bar-45"></div></div>
+              <div class="skill"><span>CloudBees</span><div class="skill-bar skill-bar-35"></div></div>
+              <div class="skill"><span>VS Code</span><div class="skill-bar skill-bar-50"></div></div>
+              <div class="skill"><span>Visual Studio</span><div class="skill-bar skill-bar-50"></div></div>
+              <div class="skill"><span>WireShark</span><div class="skill-bar skill-bar-50"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <script src="i18n.js"></script>
+    <script type="module" src="/src/main.js"></script>
+    <script src="01-tipos/01-variables.js"></script>
+    <script src="loader.js"></script>
+  </body>
+
+</html>
+

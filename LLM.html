@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TFG | Juan Hernández Guil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+</div>
+  <section class="LLM-experience">
+    <div class="LLM-overlay"></div>
+
+    <div class="LLM-content">
+      <h1 h1 data-i18n="hero_LLM_1">TFG — Construcción de Modelos de Rendimiento de Red Móvil con LLMs</h1>
+
+      <div class="LLM-section">
+        <h3 h3 data-i18n="hero_LLM_2">Objetivo</h3>
+        <p p data-i18n="hero_LLM_3">
+          El objetivo fue desarrollar una metodología para estimar valores numéricos
+           en redes móviles mediante el uso de <strong>Large Language Models (LLMs)</strong>.
+            En entornos dinámicos, como las futuras redes 6G, los modelos tradicionales pueden
+             resultar menos eficientes debido a su limitada capacidad de adaptación. 
+             Habitualmente, la estimación mediante estos modelos se estructura en tres fases:
+              <strong>entrenamiento → validación → prueba</strong>. No obstante, la etapa de 
+              entrenamiento suele ser rígida y demandar una elevada cantidad de recursos, 
+              especialmente cuando es necesario reajustar hiperparámetros ante el más mínimo
+               cambio en las características del problema. Por ello, el uso de LLMs para la 
+               estimación de indicadores clave de rendimiento (KPIs) se presenta como una alternativa
+                potencialmente ventajosa en determinados escenarios, al evitar la necesidad de un 
+                entrenamiento tradicional completo.
+        </p>
+      </div>
+
+      <div class="LLM-section">
+        <h3 h3 data-i18n="hero_LLM_4">Herramientas y Desarrollo</h3>
+        <p p data-i18n="hero_LLM_5">
+          Todo el proyecto fue desarrollado en <strong>Python</strong> utilizando <strong>Google Colab</strong>, 
+          lo que facilitó un flujo de trabajo ágil y reproducible. El resumen conceptual del código sobre la metodología diseñada se puede encontrar en mi repositorio de GitHub: 
+          <a href="https://github.com/tu_usuario_github" target="_blank">https://github.com/tu_usuario_github</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="i18n.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("language") || "es";
+      translatePage(savedLang);
+    });
+  </script>
+
+  <script>
+    window.addEventListener("popstate", function() {
+      window.location.href = "index.html#experience";
+    });
+  </script>
+</body>
+</html>
+

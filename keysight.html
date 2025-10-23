@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencia en Keysight | Juan Hernández Guil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <script src="loader.js"></script>
+</head>
+
+<body>
+  <section class="keysight-experience">
+    <div class="keysight-overlay"></div>
+
+    <div class="keysight-content">
+      <h1>Keysight Technologies</h1>
+
+      <div class="experience-section">
+        <h3 h3 data-i18n="hero_keysight_project">Proyecto</h3>
+        <p>
+          <p>
+            <ul>
+              <li li data-i18n="hero_keysight_1">Participar activamente en el desarrollo y mantenimiento de casos de prueba para tres operadores estadounidenses: <strong>ATT</strong>, <strong>T-Mobile</strong> y <strong>AT&T</strong>.</li>
+            </ul>
+        </p>
+      </div>
+
+      <div class="experience-section">
+        <h3 h3 data-i18n="hero_tools">Tecnologías y Herramientas</h3>
+        <p>
+
+          <ul>
+            <li li data-i18n="hero_keysight_t1">Utilización de entornos <strong>.NET</strong> en <strong>C#</strong> para el desarrollo de soluciones.</li>
+            <li li data-i18n="hero_keysight_t2">Colaborar con equipos multidisciplinares bajo metodologías ágiles (<strong>Scrum</strong>), asegurando la entrega eficiente de resultados y la calidad de los proyectos.</li>
+            <li li data-i18n="hero_keysight_t3">Resolución y detección de bugs para asegurar la estabilidad y funcionalidad del software.</li>
+            <li li data-i18n="hero_keysight_t4">Uso habitual de herramientas como <strong>JIRA</strong>, <strong>CloudBees</strong> y <strong>SourceTree</strong> 
+          para la gestión de tareas, control de versiones y automatización de procesos.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="i18n.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("language") || "es";
+      translatePage(savedLang);
+    });
+  </script>
+
+  <script>
+    window.addEventListener("popstate", function() {
+      window.location.href = "index.html#experience";
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("language") || "es"; // por defecto español
+      translatePage(savedLang);
+    });
+
+  </script>
+</body>
+</html>
+
