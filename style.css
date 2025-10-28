@@ -1,0 +1,1124 @@
+:root {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #111;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: hidden; 
+}
+
+
+
+/* ====== LOADER ====== */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loader-content h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; 
+  font-size: 5rem;
+  color: #333; 
+  letter-spacing: 0.05em; 
+}
+
+/* ====== SELECCIÓN DE IDIOMA ====== */
+#language-select {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+#language-select.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#language-select h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: #000;
+  text-align: center;
+}
+
+.lang-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.lang-buttons button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border: none; 
+  border-radius: 12px; 
+  background: #333; 
+  color: #fff; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-buttons button:hover {
+  background: #202020; 
+  transform: scale(1.05); 
+}
+
+/* ====== TRANSICIÓN GENERAL ====== */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero {
+  transition: opacity 0.8s ease;
+}
+
+/* ====== PRIMERA ESCENA (Hero Section) ====== */
+
+/* ====== CONTACT INFO (Hero Section) ====== */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.contact-info.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🔹 Recuadro translúcido (efecto glass) */
+.contact-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-size: 1rem;
+  color: #fefefe;
+  line-height: 1.8;
+  max-width: 360px;
+  width: 100%;
+}
+
+/* 🔹 Enlaces dentro del recuadro */
+.contact-card a {
+  color: #f3cba5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 600px) {
+  .contact-card {
+    font-size: 0.95rem;
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+  gap: 4rem;
+  padding: 4rem 6rem;
+  padding-top: 0.8rem;
+  background-color: #ffffff;
+}
+
+.hero-image img {
+  width: 340px;
+  height: auto;
+  border-radius: 0; /* sin bordes */
+  box-shadow: none; /* sin sombra */
+  display: block;
+}
+
+.hero-text {
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-family: 'Fugaz One', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400; 
+  color: #333;
+  text-shadow: 3px 3px 0px #949494;
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.hero-text p {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.hero-text .resaltado {
+  color: #f3cba5; 
+  font-weight: 600;
+}
+
+.hero-text .link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.hero-text .link:hover {
+  color: #f3cba5;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: none; /* Eliminamos el color de fondo */
+}
+
+.hero-bg {
+  position: fixed; /* Hace que la imagen cubra todo el fondo y no se mueva al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('mar.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Escala para cubrir toda la pantalla */
+  filter: brightness(0.8);
+  z-index: -1; /* Lo coloco detrás del contenido */
+  background-attachment: fixed;
+}
+
+.hero-text.blur-background {
+  background: rgba(255, 255, 255, 0.65); /* blanco translúcido */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 3rem 3.5rem; /* más espacio interior */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  color: #222;
+  max-width: 700px; /* más ancho */
+}
+
+
+
+
+.hero-text {
+  position: relative;
+  max-width: 550px;
+  z-index: 2;
+}
+
+/* Fondo transparente con blur que muestra el fondo original */
+.blur-background {
+  background-color: transparent; /* nada de blanco */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* soporte Safari */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1); /* sombra suave opcional */
+}
+
+
+/* ====== SEGUNDA ESCENA (About Section) ====== */
+.about {
+  display: flex;
+  align-items: flex-start;   /* Alinea los elementos al inicio vertical */
+  justify-content: flex-start; /* Alinea los elementos al inicio horizontal */
+  min-height: 100vh;
+  padding: 0; /* opcional: elimina el padding si quieres que quede pegado a la esquina */
+  text-align: left; /* alinea el texto a la izquierda */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-content {
+  margin: 0; 
+  padding: 2rem 4rem; /* margen superior/inferior 2rem, izquierdo/derecho 4rem */
+  text-align: left;
+}
+
+.experience-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(40,30,15,0.07);
+  text-decoration: none;
+  color: #111;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  width: 320px;
+  cursor: pointer;
+}
+
+.experience-card:hover {
+  box-shadow: 0 8px 28px rgba(217,119,6,0.13);
+  transform: translateY(-6px) scale(1.04);
+}
+
+.experience-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #ececec;
+}
+
+.experience-text {
+  padding: 1.3rem 1.1rem 1.4rem 1.1rem;
+}
+
+.experience-text h3 {
+  margin: 0 0 0.6rem 0;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.experience-text p {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+.about.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-content h2 {
+  font-family: 'Fugaz One', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400; /* Fugaz One solo soporta weight 400 y es suficientemente gruesa visualmente */
+  color: #333;
+  text-shadow: 3px 3px 0px #949494;
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.about-content .link {
+  color: #f3cba5;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.about-content .link:hover {
+  color: #f3cba5;
+}
+
+.about.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-more {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.btn-more::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f3cba5; /* color ámbar */
+  transition: width 0.4s ease;
+}
+
+.btn-more:hover {
+  color: #f3cba5;
+}
+
+.btn-more:hover::after {
+  width: 100%;
+}
+
+.experience-card img {
+  background-color: white;
+  display: block; /* para evitar espacios debajo por defecto en imágenes inline */
+}
+
+/* Fondo translúcido con blur para la sección About */
+.about .blur-container {
+  background: rgba(255, 255, 255, 0.65); /* blanco translúcido */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* soporte Safari */
+  border-radius: 18px;
+  padding: 3rem 4rem;
+  margin: 2rem auto;
+  max-width: 100%; /* opcional: limita el ancho */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.experience-cards {
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center; /* centra las tarjetas */
+}
+
+
+/* ====== BANDA SUPERIOR ====== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42px;
+  background-color: #f3cba5;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  z-index: 2000;
+  padding: 0 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Texto girando */
+.rotating-info {
+  white-space: nowrap;
+  animation: rotateInfo 10s linear infinite;
+}
+
+@keyframes rotateInfo {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ===== CONTACT ICONS ANIMADOS (VERSIÓN MEJORADA) ===== */
+.contact-icons {
+  display: flex;
+  gap: 2.5rem;
+  background: rgba(30, 30, 30, 0.9); /* 🔹 fondo opaco, gris oscuro elegante */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* 🔹 iconos sólidos desde el inicio */
+.icon {
+  position: relative;
+  font-size: 2rem;
+  color: #ffffff; /* blanco sólido */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* hover elegante */
+.icon:hover {
+  transform: scale(1.25);
+  color: #f3cba5; /* ámbar elegante */
+}
+
+/* Tooltip emergente */
+.icon::after {
+  content: attr(data-info);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.icon:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 🔹 asegura que los iconos dentro de enlaces (como LinkedIn) también sean blancos */
+.icon a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icon a:hover {
+  color: #f3cba5;
+}
+
+
+/* ====== ICONO MENÚ ====== */
+.menu-icon {
+  width: 28px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 100%;
+  height: 3px;
+  background-color: #444;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animación al hacer clic */
+.menu-icon.active div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-icon.active div:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon.active div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ====== PANEL DESPLEGABLE ====== */
+.menu-panel {
+  position: fixed;
+  top: 42px;
+  right: 0;
+  width: 240px;
+  height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: height 0.4s ease;
+  z-index: 1500;
+}
+
+.menu-panel.open {
+  height: 200px;
+}
+
+.menu-panel ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+.menu-panel li {
+  margin-bottom: 0.8rem;
+}
+
+.menu-panel a {
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu-panel a:hover {
+  color: #f3cba5;
+}
+
+/* Ajuste para que el resto de la página no quede tapado */
+body {
+  padding-top: 42px;
+}
+
+/* ====== SECCIÓN SKILLS ====== */
+.skills {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.skills-content h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #033800;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #033800;
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill span {
+  width: 120px;
+  font-weight: 500;
+}
+
+.skill-bar {
+  flex: 1;
+  height: 14px;
+  border-radius: 8px;
+  background-color: #eee;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 8px;
+  background-color: #333;
+  width: 0; /* empieza en 0 */
+  transition: width 1s ease;
+}
+
+
+/* Fondo translúcido con blur */
+.skills .blur-container {
+  background: rgba(240, 253, 255, 0.65); /* blanco translúcido */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* soporte Safari */
+  border-radius: 18px;
+  padding: 3rem 4rem;
+  margin: 2rem auto;
+  max-width: 100%; /* opcional: limita el ancho */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+
+/* Cuando la sección .visible aparece, la barra se llena */
+.skills.visible .skill-bar.skill-bar-90::after { width: 90%; }
+.skills.visible .skill-bar.skill-bar-85::after { width: 85%; }
+.skills.visible .skill-bar.skill-bar-80::after { width: 80%; }
+.skills.visible .skill-bar.skill-bar-75::after { width: 75%; }
+.skills.visible .skill-bar.skill-bar-70::after { width: 70%; }
+.skills.visible .skill-bar.skill-bar-65::after { width: 65%; }
+.skills.visible .skill-bar.skill-bar-60::after { width: 60%; }
+.skills.visible .skill-bar.skill-bar-50::after { width: 50%; }
+.skills.visible .skill-bar.skill-bar-45::after { width: 45%; }
+.skills.visible .skill-bar.skill-bar-40::after { width: 40%; }
+.skills.visible .skill-bar.skill-bar-35::after { width: 35%; }
+.skills.visible .skill-bar.skill-bar-15::after { width: 15%; }
+
+
+
+/* Animación al aparecer la sección */
+.skills.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ====== NUEVO DISEÑO DE SKILLS EN DOS COLUMNAS ====== */
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.skill-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 3rem;
+  background: rgba(240, 253, 255, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.skills-content {
+  width: 100%;
+}
+
+.skills-content h2 {
+  font-family: 'Fugaz One', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400; /* Fugaz One solo soporta weight 400 y es suficientemente gruesa visualmente */
+  color: #333;
+  text-shadow: 3px 3px 0px #949494;
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Para pantallas pequeñas: una sola columna */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills-content h2 {
+  font-family: 'Fugaz One', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400; /* Fugaz One solo soporta weight 400 y es suficientemente gruesa visualmente */
+  color: #333;
+  text-shadow: 3px 3px 0px #949494;
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ====== RESET GENERAL PARA EL FULL BACKGROUND ====== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== SECCIÓN KEYSIGHT ====== */
+.keysight-experience {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ⚡️ ocupa todo el alto de la pantalla */
+  background-image: url('keysight.jpg'); /* ⚠️ cambia por tu imagen */
+  background-size: cover; /* la imagen cubre todo el contenedor */
+  background-position: center center; /* centrada siempre */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Sin difuminado ni capa gris */
+.keysight-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* ligera oscuridad para que se lea mejor el texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenido centrado */
+.keysight-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  max-width: 900px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Título */
+.keysight-content h2 {
+  font-family: 'FogtwoNo5', 'Anton', sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #222;
+  text-shadow: 3px 3px 0px #ffe7d6;
+  margin-bottom: 2rem;
+}
+
+/* Subtítulos y párrafos */
+.keysight-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.keysight-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+
+
+.experience-section {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+  .keysight-content {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .keysight-content h2 {
+    font-size: 2.3rem;
+  }
+}
+
+
+/* ====== SECCIÓN WEB ====== */
+.web-experience {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ⚡️ ocupa todo el alto de la pantalla */
+  background-image: url('portfolio.png'); /* ⚠️ cambia por tu imagen */
+  background-size: cover; /* la imagen cubre todo el contenedor */
+  background-position: center center; /* centrada siempre */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Sin difuminado ni capa gris */
+.web-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* ligera oscuridad para que se lea mejor el texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenido centrado */
+.web-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 3rem 4rem;
+    border-radius: 20px;
+    max-width: 900px;
+    max-height: 80vh; /* ⚡️ altura máxima al 80% de la ventana */
+    overflow-y: auto; /* ⚡️ barra de scroll vertical si excede */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Título */
+.web-content h2 {
+  font-family: 'FogtwoNo5', 'Anton', sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #222;
+  text-shadow: 3px 3px 0px #ffe7d6;
+  margin-bottom: 2rem;
+}
+
+/* Subtítulos y párrafos */
+.web-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.web-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+
+
+.web-section {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+  .keysight-content {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .keysight-content h2 {
+    font-size: 2.3rem;
+  }
+}
+
+.LLM-experience {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ⚡️ ocupa todo el alto de la pantalla */
+  background-image: url('mistral.jpg'); /* ⚠️ cambia por tu imagen */
+  background-size: cover; /* la imagen cubre todo el contenedor */
+  background-position: center center; /* centrada siempre */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Sin difuminado ni capa gris */
+.LLM-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* ligera oscuridad para que se lea mejor el texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenido centrado */
+.LLM-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 3rem 4rem;
+    border-radius: 20px;
+    max-width: 900px;
+    max-height: 80vh; /* ⚡️ altura máxima al 80% de la ventana */
+    overflow-y: auto; /* ⚡️ barra de scroll vertical si excede */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Título */
+.LLM-content h2 {
+  font-family: 'FogtwoNo5', 'Anton', sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #222;
+  text-shadow: 3px 3px 0px #ffe7d6;
+  margin-bottom: 2rem;
+}
+
+/* Subtítulos y párrafos */
+.LLM-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.LLM-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+
+
+.LLM-section {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+  .keysight-content {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .keysight-content h2 {
+    font-size: 2.3rem;
+  }
+}
+
+
+
+/* 🌗 Transición entre páginas */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-image img {
+    width: 260px;
+  }
+}
+
+
+/* 🔹 Estilo del mensaje "Copiado" */
+.copied-message {
+  position: absolute;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 3000;
+}
+
+.copied-message.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+body {
+  transition: opacity 0.5s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+
+
+/* 📱 Ajustes SOLO cuando la pantalla es de móvil */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .hero, .about, .skills, .contact {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card, .box, .section {
+    width: 95%;
+    margin: 0 auto;
+    transform: scale(0.9);
+  }
+}
+
+
+

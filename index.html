@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cargando...</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <script>
+      if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = "mobile.html"; 
+      }
+    </script>
+    <div id="loader">
+      <div class="loader-content">
+        <h1 id="loader-text">0%</h1>
+      </div>
+    </div>
+
+    <div id="language-select" class="hidden">
+      <h2>Select your language</h2>
+      <div class="lang-buttons">
+        <button id="es-btn">Español</button>
+        <button id="en-btn">English</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("loader");
+        const loaderText = document.getElementById("loader-text");
+        const languageSelect = document.getElementById("language-select");
+        let progress = 0;
+
+        const interval = setInterval(() => {
+          progress++;
+          loaderText.textContent = `${progress}%`;
+
+          if (progress >= 100) {
+            clearInterval(interval);
+            loader.style.transition = "opacity 0.6s ease";
+            loader.style.opacity = 0;
+
+            loader.addEventListener("transitionend", () => {
+              loader.style.display = "none";
+              languageSelect.classList.remove("hidden");
+              languageSelect.classList.add("visible");
+            }, { once: true });
+          }
+        }, 40);
+
+        document.getElementById("es-btn").addEventListener("click", () => selectLang("es"));
+        document.getElementById("en-btn").addEventListener("click", () => selectLang("en"));
+
+        function selectLang(lang) {
+          localStorage.setItem("language", lang);
+          localStorage.setItem("visitedLoader", "true");
+
+          languageSelect.style.transition = "opacity 0.4s ease";
+          languageSelect.style.opacity = 0;
+
+          setTimeout(() => {
+            window.location.href = "main.html";
+          }, 400);
+        }
+      });
+    </script>
+  </body>
+</html>
+

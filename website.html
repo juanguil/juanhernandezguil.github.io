@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TFG | Juan Hernández Guil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+</div>
+  <section class="web-experience">
+    <div class="web-overlay"></div>
+
+    <div class="web-content">
+      <h1>Portfolio Website</h1>
+
+      <div class="web-section">
+        <h3 h3 data-i18n="hero_web_2">Objetivos</h3>
+        <p p data-i18n="hero_web_1">
+            El portfolio web se ha creado como un espacio de profundización en tecnologías como <strong>JavaScript</strong>,
+               <strong>HTML</strong> y <strong>CSS</strong>, al mismo tiempo que organiza y documenta
+                experiencias y aplicaciones compartidas.
+            
+            <p p data-i18n="hero_web_3"> <strong>Un futuro para hoy</strong> </p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="i18n.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("language") || "es";
+      translatePage(savedLang);
+    });
+  </script>
+
+  <script>
+    document.body.style.opacity = 0;
+    window.addEventListener("load", () => {
+        document.body.style.opacity = 1;
+    });
+  </script>
+
+
+  <script>localStorage.setItem("visitedOtherPage", "true");</script>  
+
+</body>
+</html>

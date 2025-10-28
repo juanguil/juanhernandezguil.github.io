@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencia en Keysight | Juan Hernández Guil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <script src="loader.js"></script>
+</head>
+
+<body>
+  <section class="keysight-experience">
+    <div class="keysight-overlay"></div>
+
+    <div class="keysight-content">
+      <h1>Keysight Technologies</h1>
+
+      <div class="experience-section">
+        <h3 h3 data-i18n="hero_5">Descripción</h3>
+        <ul>
+              <li data-i18n="hero_6">Participación activa en el desarrollo y mantenimiento de casos de prueba para tres operadores estadounidenses: <strong>AT&T</strong>, <strong>T-Mobile</strong> y <strong>Verizon</strong>.</li>
+              <li data-i18n="hero_7">Uso de entornos <strong>.NET</strong> en <strong>C#</strong> para el desarrollo de soluciones.</li>
+              <li data-i18n="hero_18">Desarrollo para la <strong>automatización</strong> de tareas</li>
+              <li data-i18n="hero_8">Colaboración con equipos multidisciplinares bajo metodologías ágiles (<strong>Scrum</strong>).</li>
+              <li data-i18n="hero_9">Detección y resolución de errores para garantizar la estabilidad y funcionalidad del software.</li>
+              <li data-i18n="hero_10">Uso habitual de herramientas como <strong>JIRA</strong>, <strong>CloudBees</strong> y <strong>SourceTree</strong>.</li>
+
+            </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="i18n.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("language") || "es";
+      translatePage(savedLang);
+    });
+  </script>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("language") || "es"; 
+      translatePage(savedLang);
+    });
+
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      history.pushState({ from: "keysight" }, "", window.location.href);
+
+      window.addEventListener("popstate", () => {
+        sessionStorage.setItem("pageLoaded", "true");
+
+        window.location.href = "LLM.html";
+      });
+    });
+  </script>
+
+
+
+
+
+
+</body>
+</html>
+
